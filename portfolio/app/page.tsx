@@ -20,13 +20,13 @@ const Home = () => {
       <div className="max-w-9xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero imageUrl="/my_image.jpg"
-                quote="Programming today is a race between software engineers striving to build bigger and better idiot-proof programs and the Universe trying to produce bigger and better idiots. So far, the Universe is winning." 
+                quote="In the world of programming, creativity isn't just a bonus – it's the difference between code that works and code that inspires." 
                 name="Hassan Ikram"
         />
         <AboutMe 
                 name={aboutme.name}
                 bio={aboutme.bio}
-                  skills={aboutme.skills}
+                skills={aboutme.skills}
             />
         <RecentProjects />
         <Clients reviews={reviews}/>

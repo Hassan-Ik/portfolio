@@ -71,6 +71,10 @@ export const aboutme = {
             color: "bg-red-600"
         },
         {
+            name: "MongoDB",
+            color: "bg-blue-900"
+        },
+        {
             name: "Apache Spark",
             color: "bg-orange-800"
         },
@@ -93,6 +97,10 @@ export const aboutme = {
         {
             name: "PowerBI",
             color: "bg-yellow-800"
+        },
+        {
+            name: "Tableau",
+            color: "bg-green-700"
         }
     ]
 }
@@ -163,55 +171,55 @@ export const gridItems = [
 export const projects = [
 {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    description: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    imageUrl: "/p1.svg",
+    title: "Plant Leaf Disease Detection Mobile App",
+    description: "AI powered image processing based hybrid mobile application for detecting various types of plant diseases.",
+    imageUrl: "/plant_leaf_disease_app.jpg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    link: "https://github.com/Hassan-Ik/Plant-Leaf-Disease-Detection-Mobile-App",
 },
 {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    description: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    imageUrl: "/p2.svg",
+    title: "CarPooling - Share Fare",
+    description: "Carpooling mobile to hire a car and share the fare between different peoples for tourism in a country or city.",
+    imageUrl: "/car_pooling.webp",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "#",
 },
 {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    description: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    imageUrl: "/p3.svg",
+    title: "Linkedin Automation Bots",
+    description: "Automation bot for LinkedIn posts interaction, lead generation, inmail requests and reply",
+    imageUrl: "/linkedin_bot.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    link: "https://github.com/Hassan-Ik/GMO_and_LinkedIn_Automation",
 },
 {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    description: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    imageUrl: "/p4.svg",
+    title: "Hugging Face LLM models finetuning and optimization",
+    description: "Finetuning and optimizing hugging face models for specific business use cases.",
+    imageUrl: "/hugging_face.webp",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    link: "https://github.com/Hassan-Ik",
 },
 ];
 
 export const reviews = [
     {
-      name: "Jane Doe",
-      title: "CEO of TechCorp",
-      review: "This team is fantastic! They helped us transform our product, and we couldn't be happier with the results. Highly recommended.",
+      name: "Robert Shouse",
+      title: "CEO",
+      review: "Hassan I. is a reliable and responsible developer. He has gone above and beyond the initial job, communicates regularly, and keeps careful logs of his work. He was a joy to work with and I highly recommend him!",
       avatar: "/images/jane-doe.jpg", // Replace with actual image URL
     },
     {
-      name: "John Smith",
-      title: "Founder of WebX",
-      review: "An outstanding team to work with! Their attention to detail and commitment to deadlines is unmatched.",
+      name: "Seth Brundle",
+      title: "Founder/CEO",
+      review: "He did an outstanding job creating and optimizing LinkedIn automation scripts, delivering efficient and high-quality results. An outstanding team to work with! Their attention to detail and commitment to deadlines is unmatched.",
       avatar: "/images/john-smith.jpg", // Replace with actual image URL
     },
     {
       name: "Emma Brown",
-      title: "Marketing Head at DesignCo",
-      review: "I have worked with many agencies, but this one stands out. Their creative approach is top-notch!",
+      title: "Manager",
+      review: "Among all the developers I've collaborated with, this individual truly excels. Hassan's creativity in problem-solving really sets them apart!",
       avatar: "/images/emma-brown.jpg", // Replace with actual image URL
     },
     // More reviews...

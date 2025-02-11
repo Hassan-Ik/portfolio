@@ -3,7 +3,7 @@ const AboutMe = ({ name, bio, skills }: AboutMeProps) => {
     const bioParagraphs = bio.split("\n").filter((p) => p.trim() !== "");
 
     return (
-        <section className="w-full bg-gray-900 py-12 text-white">
+        <section id='about' className="w-full bg-gray-900 py-12 text-white">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6">
                 {/* Left Side - Image */}
                 <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
