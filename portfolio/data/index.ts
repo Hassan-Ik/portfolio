@@ -9,15 +9,15 @@ export const navItems = [
 
 export const aboutme = {
     name: "Hassan Ikram",
-    bio: `I'm a Python developer with a passion for AI and backend development. With 4+ years of experience in crafting robust software solutions, I thrive on building intelligent systems that make a positive impact.
+    bio: `I’m a Python developer passionate about AI and backend development. With over 4 years of experience, I focus on creating software that solves problems and has a positive impact.
 
-                  🤖 In the realm of AI, I specialize in leveraging Python's vast ecosystem of libraries and frameworks to create innovative machine learning models and data-driven applications. From natural language processing to computer vision, I enjoy delving into complex problems and devising elegant solutions.
-                  
-                  ⚙️ On the backend side, I excel in architecting scalable and efficient systems, ensuring seamless performance and reliability. Whether it's designing RESTful APIs, optimizing database queries, or deploying microservices, I'm committed to delivering high-quality code that powers mission-critical applications.
-                  
-                  🚀 My journey in software development has been marked by a relentless pursuit of learning and growth. I'm always eager to explore new technologies and methodologies, staying abreast of the latest trends and best practices in the industry.
-                  
-                  💼 Currently seeking opportunities to collaborate on exciting projects where I can contribute my expertise in Python, AI, and backend development to drive innovation and create impactful solutions. Let's connect and explore how we can work together to bring ideas to life!`,
+🤖 In AI, I use Python’s libraries to build machine learning models and data-driven apps. I enjoy tackling challenges in areas like natural language processing and computer vision.
+
+⚙️ On the backend, I build scalable and reliable systems. Whether it’s creating APIs, optimizing databases, or deploying microservices, I aim to write efficient code that powers important applications.
+
+🚀 My journey is all about learning and improving. I keep up with the latest tech trends and enjoy exploring new tools and methods.
+
+💼 I’m looking for opportunities to work on exciting projects where I can use my Python, AI, and backend skills to drive innovation. Let’s connect and see how we can collaborate!`,
     skills: [
         {
             name: "Python",

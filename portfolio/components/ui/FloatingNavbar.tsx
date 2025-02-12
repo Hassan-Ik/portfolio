@@ -64,7 +64,7 @@ export const FloatingNav = ({
           // change rounded-full to rounded-lg
           // remove dark:border-white/[0.2] dark:bg-black bg-white border-transparent
           // change  pr-2 pl-8 py-2 to px-10 py-5
-          "flex md:max-w-fit sm:max-w-full md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-0 md:top-5 inset-x-0 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-4 border border-black/10 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4 rounded-none md:rounded-lg",
+          "flex md:max-w-fit sm:max-w-full md:min-w-[70vw] lg:min-w-fit fixed z-[5000] top-0 md:top-2 inset-x-0 mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-4 border border-black/10 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] items-center justify-center space-x-4 rounded-none md:rounded-lg md:border-none",
           className
         )}
         style={{
@@ -78,7 +78,7 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
