@@ -1,4 +1,15 @@
-const AboutMe = ({ name , bio, skills }) => {
+interface Skill {
+    name: string;
+    color: string;
+}
+
+interface AboutProps {
+    name: string;
+    bio: string;
+    skills: Skill[];
+}
+
+const AboutMe = ({ name , bio, skills }: AboutProps) => {
 
     const bioParagraphs = bio.split("\n").filter((p) => p.trim() !== "");
 

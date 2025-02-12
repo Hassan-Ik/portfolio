@@ -2,7 +2,18 @@ import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from 'next/image';
 
-const Clients = ({ reviews }) => {
+interface Reviews {
+    name: string;
+    title: string;
+    review: string;
+    avatar: string;
+}
+
+interface RevProps{
+    reviews: Reviews[]
+}
+
+const Clients = ({ reviews }: RevProps) => {
     const [currentIndex, setCurrentIndex] = useState(1);
     const totalReviews = reviews.length;
   

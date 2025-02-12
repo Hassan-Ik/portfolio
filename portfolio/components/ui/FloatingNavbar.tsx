@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 type NavItem = {
   name: string;
   link: string;
-  icon?: JSX.Element;
+  icon?: string;
 };
 
 export const FloatingNav = ({
