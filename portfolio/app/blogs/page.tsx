@@ -6,11 +6,18 @@ import Link from 'next/link';
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
 
-const Blogs = () => {
+type Blog = {
+    id: number;
+    title: string;
+    description: string;
+    slug: string;
+  };
 
-    const [blogs, setBlogs] = useState([]);
+  const Blogs = () => {
+
+    const [blogs, setBlogs] =  useState<Blog[]>([]);
     const [search, setSearch] = useState("");
-    const [filteredBlogs, setFilteredBlogs] = useState([]);
+    const [filteredBlogs, setFilteredBlogs] =  useState<Blog[]>([]);
 
       
     useEffect(() => {
