@@ -7,7 +7,7 @@ interface HeroProps {
 }
 const Hero = ({ imageUrl, quote, name }: HeroProps) => {
     return (
-        <section className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-center bg-gray-900 text-center md:text-left  text-white px-6 py-12">
+        <section className="w-full min-h-[70vh] flex flex-col md:flex-row items-center justify-center bg-slate-950 text-center md:text-left  text-white px-6 py-12">
             {/* Image Section */}
             <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg border-4 border-white">
                 <Image 

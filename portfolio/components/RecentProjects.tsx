@@ -33,7 +33,7 @@ const RecentProjects = () => {
     }, [isHovered]); // Rerun when hover state changes
 
     return (
-        <section id='projects' className="px-12 w-full bg-gray-900 py-12 text-white">
+        <section id='projects' className="px-12 w-full bg-gray-900 py-20 text-white">
             <h2 className="text-3xl font-bold text-center mb-12">Recent Projects</h2>
 
             <div 

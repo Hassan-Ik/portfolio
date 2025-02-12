@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Image from 'next/image';
+import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
+import { Transition } from '@headlessui/react';
 
 interface Reviews {
     name: string;
@@ -14,96 +14,101 @@ interface RevProps{
 }
 
 const Clients = ({ reviews }: RevProps) => {
-    const [currentIndex, setCurrentIndex] = useState(1);
-    const totalReviews = reviews.length;
-  
-    const extendedReviews = [reviews[totalReviews - 1], ...reviews, reviews[0]];
-  
-    const nextReview = () => {
-      setCurrentIndex((prev) => (prev + 1) % (totalReviews + 1));
-    };
-  
-    const prevReview = () => {
-      setCurrentIndex((prev) => (prev - 1 + (totalReviews + 1)) % (totalReviews + 1));
-    };
-  
-    // Smooth transition fix for looping effect
-    useEffect(() => {
-      if (currentIndex === 0) {
-        setTimeout(() => {
-          setCurrentIndex(totalReviews);
-        }, 500);
-      }
-      if (currentIndex === totalReviews + 1) {
-        setTimeout(() => {
-          setCurrentIndex(1);
-        }, 500);
-      }
-    }, [currentIndex, totalReviews]);
-  
-    return (
-      <section id='testimonials' className="w-full bg-gray-900 py-12 text-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center mb-4">
+    const testimonialsRef = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState<number>(0)
+  const [autorotate, setAutorotate] = useState<boolean>(true)
+  const autorotateTiming: number = 7000
+
+  useEffect(() => {
+    if (!autorotate) return
+    const interval = setInterval(() => {
+      setActive(active + 1 === reviews.length ? 0 : active => active + 1)
+    }, autorotateTiming)
+    return () => clearInterval(interval)
+  }, [active, autorotate])
+
+  const heightFix = () => {
+    if (testimonialsRef.current && testimonialsRef.current.parentElement) testimonialsRef.current.parentElement.style.height = `${testimonialsRef.current.clientHeight}px`
+  }
+
+  useEffect(() => {
+    heightFix()
+  }, [])  
+
+  return (
+    <section id='testimonials' className="w-full bg-gray-900 py-12 text-white" >  
+    <div className="w-full max-w-3xl mx-auto text-center py-6">
+        <h2 className="text-3xl font-semibold text-center mb-4">
             Testimonials
           </h2>
           <p className="text-center mb-8">What my clients says about me</p>
-  
-          <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
-      {/* Review Container */}
-      <div className="flex w-full transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}>
-        {extendedReviews.map((review, index) => {
-          const isActive = index === currentIndex;
-          const isBefore = index === (currentIndex - 1 + extendedReviews.length) % extendedReviews.length;
-          const isAfter = index === (currentIndex + 1) % extendedReviews.length;
 
-          return (
-            <div
-              key={index}
-              className={`flex-none w-1/3 px-4 py-6 transition-transform duration-500 ease-in-out
-                ${isActive ? "scale-110 z-10" : ""}
-                ${isBefore || isAfter ? "scale-95 opacity-75" : ""}
-              `}
-            >
-              <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src={review.avatar}
-                    alt={review.name}
-                    layout="fill"
-                    className="w-16 h-16 rounded-full mr-4"
-                  />
-                  <div>
-                    <h3 className="text-xl font-semibold">{review.name}</h3>
-                    <p className="text-gray-400">{review.title}</p>
-                  </div>
-                </div>
-                <p className="text-gray-300">{review.review}</p>
-              </div> 
-            </div>
-          );
-        })}
+      {/* Testimonial image */}
+      <div className="relative h-32">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-purple-500/25 before:via-purple-500/5 before:via-25% before:to-purple-500/0 before:to-75% before:rounded-full before:-z-10">
+          <div className="h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
+
+            {reviews.map((review, index) => (
+              <Transition
+                as="div"
+                key={index}
+                show={active === index}
+                className="absolute inset-0 h-full -z-10"
+                enter="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700 order-first"
+                enterFrom="opacity-0 -rotate-[60deg]"
+                enterTo="opacity-100 rotate-0"
+                leave="transition ease-[cubic-bezier(0.68,-0.3,0.32,1)] duration-700"
+                leaveFrom="opacity-100 rotate-0"
+                leaveTo="opacity-0 rotate-[60deg]"
+                beforeEnter={() => heightFix()}
+              >
+                <Image className="relative top-11 left-1/2 -translate-x-1/2 rounded-full" src={review.avatar} width={56} height={56} alt={review.name} />
+              </Transition>
+            ))}
+            
+          </div>
+        </div>
       </div>
+      {/* Text */}
+      <div className="mb-9 transition-all duration-150 delay-300 ease-in-out">
+        <div className="relative flex flex-col" ref={testimonialsRef}>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevReview}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 p-3 rounded-full text-white shadow-lg hover:bg-gray-700 transition duration-300"
-      >
-        <FaChevronLeft />
-      </button>
-      <button
-        onClick={nextReview}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 p-3 rounded-full text-white shadow-lg hover:bg-gray-700 transition duration-300"
-      >
-        <FaChevronRight />
-      </button>
-    </div>
+          {reviews.map((review, index) => (
+            <Transition
+              as="div"
+              key={index}
+              show={active === index}
+              enter="transition ease-in-out duration-500 delay-200 order-first"
+              enterFrom="opacity-0 -translate-x-4"
+              enterTo="opacity-100 translate-x-0"
+              leave="transition ease-out duration-300 delay-300 absolute"
+              leaveFrom="opacity-100 translate-x-0"
+              leaveTo="opacity-0 translate-x-4"
+              beforeEnter={() => heightFix()}
+            >
+              <div className="text-2xl font-bold text-white before:content-['\201C'] after:content-['\201D']">{review.review}</div>
+            </Transition>
+          ))}
 
         </div>
-      </section>
-    );
-  }
+      </div>
+      {/* Buttons */}
+      <div className="flex flex-wrap justify-center -m-1.5">
+
+        {reviews.map((review, index) => (
+          <button
+            key={index}
+            className={`inline-flex justify-center whitespace-nowrap rounded-full px-3 py-1.5 m-1.5 text-xs shadow-sm focus-visible:outline-none focus-visible:ring focus-visible:ring-purple-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ${active === index ? 'bg-purple-500 text-white shadow-purple-950/10' : 'bg-white hover:bg-purple-100 text-slate-900'}`}
+            onClick={() => { setActive(index); setAutorotate(false); }}
+          >
+            <span>{review.name}</span> <span className={`${active === index ? 'text-purple-200' : 'text-slate-300'}`}>-</span> <span>{review.title}</span>
+          </button>
+        ))}
+
+      </div>
+    </div>
+    </section>
+  )
+};
 
 export default Clients;
