@@ -33,60 +33,70 @@ const ContactMeForm = () => {
   };
 
   return (
-    <section id='contact' className="py-12 bg-gray-900 text-white">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-semibold text-center mb-8">Contact Me</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-          {/* Name */}
-          <div>
-            <label className="block text-lg mb-2">Name</label>
-            <input
-              type="text"
-              {...register("name", { required: "Name is required" })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-          </div>
+    <section id="contact" className="py-12 bg-gray-900 text-white">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        {/* Left Side - Title and Description */}
+        <div className="md:w-1/2 mb-8 md:mb-0">
+          <h2 className="text-3xl font-semibold text-center md:text-left mb-4">Contact Me</h2>
+          <p className="text-lg text-gray-300 text-center md:text-left">
+            If you have any queries or would like to discuss a project, feel free to reach out to me. I am happy to help with your business needs and answer any questions you have.
+          </p>
+        </div>
 
-          {/* Email */}
-          <div>
-            <label className="block text-lg mb-2">Email</label>
-            <input
-              type="email"
-              {...register("email", { required: "Email is required", pattern: { value: /^[^@]+@[^@]+\.[^@]+$/, message: "Invalid email" } })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-          </div>
+        {/* Right Side - Contact Form */}
+        <div className="md:w-1/2">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Name */}
+            <div>
+              <label className="block text-lg mb-2">Name</label>
+              <input
+                type="text"
+                {...register("name", { required: "Name is required" })}
+                className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+            </div>
 
-          {/* Message */}
-          <div>
-            <label className="block text-lg mb-2">Message</label>
-            <textarea
-              {...register("message", { required: "Message is required" })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
-              rows={6}
-            ></textarea>
-            {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
-          </div>
+            {/* Email */}
+            <div>
+              <label className="block text-lg mb-2">Email</label>
+              <input
+                type="email"
+                {...register("email", { required: "Email is required", pattern: { value: /^[^@]+@[^@]+\.[^@]+$/, message: "Invalid email" } })}
+                className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+              />
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+            </div>
 
-          {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full p-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-            >
-              Send Message
-            </button>
-          </div>
-        </form>
+            {/* Message */}
+            <div>
+              <label className="block text-lg mb-2">Message</label>
+              <textarea
+                {...register("message", { required: "Message is required" })}
+                className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
+                rows={6}
+              ></textarea>
+              {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
+            </div>
 
-        {/* Form status message */}
-        {formStatus && (
-          <div className={`mt-6 text-center ${formStatus.includes("Error") ? "text-red-500" : "text-green-500"}`}>
-            {formStatus}
-          </div>
-        )}
+            {/* Submit Button */}
+            <div>
+              <button
+                type="submit"
+                className="w-full p-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          {/* Form status message */}
+          {formStatus && (
+            <div className={`mt-6 text-center ${formStatus.includes("Error") ? "text-red-500" : "text-green-500"}`}>
+              {formStatus}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
