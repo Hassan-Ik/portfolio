@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Getting Started with FASTAPI",
+        "description": "A beginner-friendly guide to FASTAPI",
+        "slug": "getting-started-fastapi"
+      },
+      {
+        "id": 2,
+        "title": "Optimizing and Finetunning your LLM models",
+        "description": "Learn how to optimize and finetune your LLM models for your business use cases",
+        "slug": "optimizing-finetune-llm"
+      },
+      {
+        "id": 3,
+        "title": "Exploring Ethical Considerations in LLM Deployments",
+        "description": "Understand the ethical implications and considerations when deploying LLMs in real-world applications",
+        "slug": "ethical-llm-deployment"
+      },
+      {
+        "id": 4,
+        "title": "Advanced Techniques for LLM Model Optimization",
+        "description": "Explore advanced methods for fine-tuning and enhancing the performance of your LLM models",
+        "slug": "advanced-llm-optimization"
+      },
+      {
+        "id": 8,
+        "title": "Reviewing the Tech Market in 2025: Key Innovations and Emerging Markets",
+        "description": "A comprehensive look at the latest technological innovations, including AI, IoT, and robotics, shaping the tech market in 2025.",
+        "slug": "tech-market-2025-review"
+      }
+]
