@@ -33,11 +33,11 @@ const RecentProjects = () => {
     }, [isHovered]); // Rerun when hover state changes
 
     return (
-        <section id='projects' className="px-12 w-full bg-gray-900 py-20 text-white">
+        <section id='projects' className="px-8 w-full bg-gray-900 py-12 text-white ">
             <h2 className="text-3xl font-bold text-center mb-12">Recent Projects</h2>
 
             <div 
-                className="relative overflow-hidden px-6 my-6"
+                className="relative overflow-hidden px-2 py-6"
                 onMouseEnter={() => setIsHovered(true)} 
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -51,7 +51,7 @@ const RecentProjects = () => {
                             href={project.link} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="min-w-[300px] md:min-w-[400px] bg-gray-800 p-4 rounded-2xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl"
+                            className="min-w-[250px] md:min-w-[400px] bg-gray-800 p-4 rounded-2xl shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl"
                         >
                             <div className="relative w-full h-48 rounded-lg overflow-hidden">
                                 <Image 

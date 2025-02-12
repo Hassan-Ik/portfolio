@@ -43,7 +43,7 @@ const ContactMeForm = () => {
             <input
               type="text"
               {...register("name", { required: "Name is required" })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
           </div>
@@ -54,7 +54,7 @@ const ContactMeForm = () => {
             <input
               type="email"
               {...register("email", { required: "Email is required", pattern: { value: /^[^@]+@[^@]+\.[^@]+$/, message: "Invalid email" } })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
           </div>
@@ -64,7 +64,7 @@ const ContactMeForm = () => {
             <label className="block text-lg mb-2">Message</label>
             <textarea
               {...register("message", { required: "Message is required" })}
-              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 border border-gray-600 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-600"
               rows={6}
             ></textarea>
             {errors.message && <p className="text-red-500 text-sm">{errors.message.message}</p>}
@@ -74,7 +74,7 @@ const ContactMeForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full p-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
             >
               Send Message
             </button>

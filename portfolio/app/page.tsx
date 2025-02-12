@@ -19,7 +19,7 @@ const Home = () => {
     <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-0 px-0 ">
       <div className="max-w-9xl w-full">
         <FloatingNav navItems={navItems} />
-        <Hero imageUrl="/my_image.jpg"
+        <Hero imageUrl="/pic.jpg"
                 quote="In the world of programming, creativity isn't just a bonus – it's the difference between code that works and code that inspires." 
                 name="Hassan Ikram"
         />
