@@ -29,9 +29,9 @@ const Blogs = () => {
     }, []);
     
     useEffect(() => {
-        const results =  blogs.length > 0 ? blogs.filter((blog) =>
-          blog.title?.toLowerCase().includes(search.toLowerCase())
-        );
+        const results = blogs.length > 0 
+            ? blogs.filter((blog) => blog.title?.toLowerCase().includes(search.toLowerCase())) 
+            : [];
         setFilteredBlogs(results);
       }, [search, blogs]);
     
@@ -40,7 +40,7 @@ const Blogs = () => {
             <div className="max-w-10xl w-full">
                 <FloatingNav navItems={navItems} />
                 <div className="max-w-2xl mx-auto p-6">
-                <h1 className="text-3xl font-bold mb-4 text-center">My Blogs</h1>
+                <h1 className="text-3xl font-bold mt-12 mb-4 text-center">My Blogs</h1>
                 <input
                     type="text"
                     placeholder="Search blogs..."
