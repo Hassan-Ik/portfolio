@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
+import Image from 'next/image';
 
 const Clients = ({ reviews }) => {
-    const [currentIndex, setCurrentIndex] = useState(0); // Start at first duplicated review
+    const [currentIndex, setCurrentIndex] = useState(1);
     const totalReviews = reviews.length;
   
-    // Duplicate first and last review to create an infinite loop effect
     const extendedReviews = [reviews[totalReviews - 1], ...reviews, reviews[0]];
   
-    // Next review
     const nextReview = () => {
       setCurrentIndex((prev) => (prev + 1) % (totalReviews + 1));
     };
   
-    // Previous review
     const prevReview = () => {
       setCurrentIndex((prev) => (prev - 1 + (totalReviews + 1)) % (totalReviews + 1));
     };
@@ -60,9 +57,10 @@ const Clients = ({ reviews }) => {
             >
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
                 <div className="flex items-center mb-4">
-                  <img
+                  <Image
                     src={review.avatar}
                     alt={review.name}
+                    layout="fill"
                     className="w-16 h-16 rounded-full mr-4"
                   />
                   <div>

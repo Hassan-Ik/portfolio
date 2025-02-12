@@ -20,7 +20,7 @@ const Hero = ({ imageUrl, quote, name }: HeroProps) => {
 
             {/* Quote Section */}
             <div className="mt-6 md:mt-0 md:ml-10 text-center md:text-left max-w-lg">
-                <p className="text-2xl md:text-3xl font-semibold italic">"{quote}"</p>
+                <p className="text-2xl md:text-3xl font-semibold italic">&quot;{quote}&quot;</p>
                 <p className="mt-4 text-lg font-medium">- {name}</p>
             </div>
         </section>
