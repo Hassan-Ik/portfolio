@@ -1,4 +1,4 @@
-const AboutMe = ({ name, bio, skills }: AboutMeProps) => {
+const AboutMe = ({ name , bio, skills }) => {
 
     const bioParagraphs = bio.split("\n").filter((p) => p.trim() !== "");
 
