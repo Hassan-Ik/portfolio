@@ -7,11 +7,6 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export const getOS = (): string => {
-    if (typeof window !== "undefined") {
-      // Client-side: Use navigator
-      return window.navigator.platform.includes("Win") ? "Windows" : "Linux/macOS";
-    } else {
-      // Server-side: Use process.platform
       switch (process.platform) {
         case "win32":
           return "Windows";
@@ -22,6 +17,5 @@ export const getOS = (): string => {
         default:
           return "Unknown OS";
       }
-    }
   };
   
