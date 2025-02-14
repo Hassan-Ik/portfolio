@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
+import { getOS } from "@/lib/utils";
 
 type Blog = {
     id: number;
@@ -21,9 +22,17 @@ type Blog = {
 
       
     useEffect(() => {
+
         const fetchData = async () => {
             try {
-                const res = await fetch("http://localhost:3000/blogs.json"); // Adjust the path as needed
+                // local server url
+                let req_url;
+                if(getOS() == "Windows") {
+                    req_url = "http://localhost:3000/blogs.json"
+                } else {
+                    req_url = "https://hassan-portfolio-seven.vercel.app/blogs.json"
+                }
+                const res = await fetch(req_url); // Adjust the path as needed
                 const data = await res.json();
                 setBlogs(data)
                 console.log(data); // Do something with the data
