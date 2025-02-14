@@ -30,8 +30,11 @@ type Blog = {
                 if(getOS() == "Windows") {
                     req_url = "http://localhost:3000/blogs.json"
                 } else {
+
                     req_url = "https://hassan-portfolio-seven.vercel.app/blogs.json"
                 }
+
+                console.log(getOS())
                 const res = await fetch(req_url); // Adjust the path as needed
                 const data = await res.json();
                 setBlogs(data)
