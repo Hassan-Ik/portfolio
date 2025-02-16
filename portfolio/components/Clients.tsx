@@ -62,7 +62,7 @@ const Clients = ({ reviews }: RevProps) => {
                 leaveTo="opacity-0 rotate-[60deg]"
                 beforeEnter={() => heightFix()}
               >
-                <Image className="relative top-11 left-1/2 -translate-x-1/2 rounded-full" src={review.avatar} width={56} height={56} alt={review.name} />
+                <Image className="relative top-11 left-1/2 -translate-x-1/2 rounded-full" src={review.avatar} width={64} height={64} alt={review.name} />
               </Transition>
             ))}
             

@@ -65,20 +65,20 @@ type Blog = {
                     placeholder="Search blogs..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full p-2 border rounded-md mb-4 py-2"
+                    className="w-full p-2 pl-4 mb-4 text-gray-700 bg-slate-950 border border-x-2 border-y-2 border-purple-900 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
                 <ul className="space-y-4">
                     {filteredBlogs.length > 0 ? (
                     filteredBlogs.map((blog) => (
-                        <li key={blog.id} className="p-4 border rounded-lg shadow-md">
-                        <Link href={`/blogs/${blog.slug}`} className="text-xl font-semibold text-blue-600 hover:underline">
+                        <li key={blog.id} className="p-4 border rounded-md border-purple-600 shadow-md">
+                        <Link href={`/blogs/${blog.slug}`} className="text-xl font-semibold text-white hover:underline">
                             {blog.title}
                         </Link>
-                        <p className="text-gray-600">{blog.description}</p>
+                        <p className="text-gray-400">{blog.description}</p>
                         </li>
                     ))
                     ) : (
-                    <p className="text-gray-500">No blogs found.</p>
+                    <p className="text-gray-400">No blogs found.</p>
                     )}
                 </ul>
                 </div>

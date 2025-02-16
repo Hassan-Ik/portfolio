@@ -37,14 +37,14 @@ const ContactMeForm = () => {
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         {/* Left Side - Title and Description */}
         <div className="md:w-1/2 mb-8 md:mb-0">
-          <h2 className="text-3xl font-semibold text-center md:text-left mb-4">Contact Me</h2>
+          <h2 className="text-2xl font-semibold text-center md:text-left mb-4">Contact Me</h2>
           <p className="text-lg text-gray-300 text-center md:text-left">
             If you have any queries or would like to discuss a project, feel free to reach out to me. I am happy to help with your business needs and answer any questions you have.
           </p>
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 sm:w-full">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Name */}
             <div>

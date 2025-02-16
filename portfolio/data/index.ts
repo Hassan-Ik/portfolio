@@ -56,12 +56,17 @@ export const aboutme = {
             color: "bg-orange-600"
         },
         {
-            name: "AWS",
+            name: "PyTorch",
             color: "bg-orange-500"
         },
         {
             name: "Azure",
             color: "bg-blue-500"
+        },
+        
+        {
+            name: "AWS",
+            color: "bg-orange-500"
         },
         {
             name: "GCP",
@@ -70,6 +75,10 @@ export const aboutme = {
         {
             name: "MongoDB",
             color: "bg-blue-900"
+        },
+        {
+            name: "PostgreSQL",
+            color: "bg-blue-400"
         },
         {
             name: "Apache Spark",
@@ -205,19 +214,19 @@ export const reviews = [
       name: "Robert Shouse",
       title: "CEO",
       review: "Hassan I. is a reliable and responsible developer. He has gone above and beyond the initial job, communicates regularly, and keeps careful logs of his work. He was a joy to work with and I highly recommend him!",
-      avatar: "/images/jane-doe.jpg", // Replace with actual image URL
+      avatar: "/placeholder.png", // Replace with actual image URL
     },
     {
       name: "Seth Brundle",
       title: "Founder/CEO",
-      review: "He did an outstanding job creating and optimizing LinkedIn automation scripts, delivering efficient and high-quality results. An outstanding team to work with! Their attention to detail and commitment to deadlines is unmatched.",
-      avatar: "/images/john-smith.jpg", // Replace with actual image URL
+      review: "He did an outstanding job creating and optimizing LinkedIn automation scripts, delivering efficient and high-quality results. An outstanding team to work with! His attention to detail and commitment to deadlines is unmatched.",
+      avatar: "/placeholder.png", // Replace with actual image URL
     },
     {
       name: "Emma Brown",
       title: "Manager",
       review: "Among all the developers I've collaborated with, this individual truly excels. Hassan's creativity in problem-solving really sets them apart!",
-      avatar: "/images/emma-brown.jpg", // Replace with actual image URL
+      avatar: "/placeholder.png", // Replace with actual image URL
     },
     // More reviews...
   ];
