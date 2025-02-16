@@ -3,7 +3,7 @@ export const navItems = [
     { name: "Projects", link: "/#projects" },
     { name: "Testimonials", link: "/#testimonials" },
     { name: "Contact", link: "/#contact" },
-    { name: "CV", link: '/#'},
+    { name: "CV", link: '/hassan-ikram-cv.pdf'},
     { name: "Blogs", link: "/blogs"}
   ];
 
@@ -207,6 +207,22 @@ export const projects = [
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/Hassan-Ik",
 },
+{
+    id: 5,
+    title: "Energy Made Easy Scraper",
+    description: "Energy made easy an australian energy price calculation website scraper with various filters capabilities",
+    imageUrl: "/energy-made-easy.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://github.com/Hassan-Ik/Energy-Made-Easy-Scraper",
+},
+{
+    id: 6,
+    title: "Deep Reinforcement Learning for Imbalanced Data Classification",
+    description: "Deep Q Network based archtecture to train a model to learn on imbalanced data set where one class has 1% data available and there is an imbalance of data",
+    imageUrl: "/dqn.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+    link: "https://github.com/Hassan-Ik/Deep-Reinforcement-Learning-on-Imbalanced-Data"
+}
 ];
 
 export const reviews = [
